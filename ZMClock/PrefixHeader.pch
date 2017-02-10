@@ -1,0 +1,256 @@
+//
+//  PrefixHeader.pch
+//  ZMClock
+//
+//  Created by ZhongMeng on 16/3/1.
+//  Copyright © 2016年 ZhongMeng. All rights reserved.
+//
+
+
+#define kRecordAudioFile @"myRecord.pcm"//@"myRecord.caf"
+
+
+#pragma mark  DataRequest Method
+#pragma mark  LifeStyle Method
+#pragma mark  Getter/Setter Method
+#pragma mark  Delegate Method
+#pragma mark  Response Method
+#pragma mark  Private Method
+
+
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#pragma mark - 第三方头文件
+#import "UIImageView+WebCache.h"
+#import "UIImage+Category.h"
+
+
+#pragma mark - 系统
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <netinet6/in6.h>
+#import <arpa/inet.h>
+#import <ifaddrs.h>
+#import <netdb.h>
+#import "NSString+Extension.h"
+#import "NSUserDefaults+Category.h"
+#import "NSMutableArray+Repeat.h"
+#import "MJRefresh.h"
+
+#import "PublicHelper/AFNetworking/AFNetworking.h"
+#import "PublicHelper/AFNetworking/AFNetworkingHelper.h"
+
+#pragma mark - 头文件
+
+#import "ZMHelper.h"
+#import "ZMImageView.h"
+#import "ZMView.h"
+#import "ZMLabel.h"
+#import "ZMButton.h"
+#import "ZMSwitch.h"
+#import "ZMScrollView.h"
+#import "ZMTableView.h"
+#import "ZMTableViewCell.h"
+#import "ZMTextField.h"
+#import "ZMImageView.h"
+#import "ZMButton.h"
+#import "ZMWeather/Model/WeatherHelper.h"
+
+
+#import "TopicAlertView.h"
+#import "NSUserDefaults+Category.h"
+#import "SQLiteDBManage.h"
+#import "NSFileManagerHelper.h"
+
+
+#import "ZMUserInfo.h"
+#import "MainViewControllerHelper.h"
+
+//张锐
+#import "APPTransmit.h"
+#import "ZMSystemTool.h"
+#import "NSDate+convenience.h"
+#import "NSDate+Helper.h"
+#import "ZMBugFixManager.h"
+#import "IFlyFaceHelper.h"
+
+
+
+#pragma mark - 项目的宏定义
+#define kWindow [UIApplication sharedApplication].keyWindow
+//主屏幕的大小
+#define KWindowScreen [[UIScreen mainScreen] bounds]
+
+//设备屏幕尺寸
+#define kScreen_Height   ([UIScreen mainScreen].bounds.size.height)
+#define kScreen_Width    ([UIScreen mainScreen].bounds.size.width)
+
+//GCD
+#define dispatch_queue   dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define DISPATCH_GROUP(block) dispatch_group_async(group, dispatch_queue, block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+//color
+#define RGB(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+#define RGBAlpha(r, g, b, a)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+
+//项目的主题颜色
+#define MainColor RGBAlpha(0, 171.0, 235.0, 1.0)
+
+#define PinkColor RGBAlpha(247.0, 228.0, 255.0, 1.0)
+
+#define TipAlertViewolor RGB(82.0, 49.0, 72.0)
+
+#define DeepGreen RGB(8.0, 162.0, 149.0)
+
+//选中的颜色
+#define SelectColor RGBAlpha(0, 121.0, 235.0, 1.0)
+
+
+//项目的主题颜色
+#define SingninColor RGBAlpha(116.0, 116.0, 116.0, 1.0)
+
+//项目中字体的灰色颜色
+#define TextGrayColor RGBAlpha(117.0, 117.0, 117.0, 1.0)
+
+//项目中字体的灰色颜色
+#define MainKeChengTextGrayColor RGBAlpha(88.0, 88.0, 88.0, 1.0)
+
+//项目中字体的灰色颜色
+#define KeyBoardTextGrayColor RGBAlpha(117.0, 117.0, 117.0, 0.5)
+
+//项目中字体的灰色颜色
+#define EmptyTextGrayColor RGBAlpha(201.0, 201.0, 206.0, 1.0)
+
+//项目的分割线颜色
+#define LineViewColor RGBAlpha(202.0, 202.0, 204.0, 0.8)
+
+//项目的分割线颜色
+#define MainBackGroundColor RGBAlpha(245.0, 245.0, 245.0, 1.0)
+
+#define AlertViewBackGroundColor RGBAlpha(0.0, 0.0, 0.0, 0.3)
+
+
+////////////////////////////////张锐
+#define TOPBGColor [UIColor colorWithRed:106/255.0 green:221/255.0 blue:255/255.0 alpha:1]
+
+//#define NavigationBGColor RGBAlpha(111, 221, 253, 1.0)
+
+#define NavigationBGColor RGBAlpha(236, 128, 172, 1.0)
+
+
+#define IMAGE(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+
+
+#define HourToSec 3600
+#define DayToSec 24*3600
+#define WeekTosec 7*24*3600
+
+
+#define MAIN_MAIN_APP_COLOR  [UIColor colorWithRed:236/255.0 green:128/255.0 blue:172/255.0 alpha:1]
+
+
+
+
+////////////////////////////////
+#define kAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define kApplication [UIApplication sharedApplication]
+
+
+#define CellIdentifier  @"中梦闹钟自定义表单元格"
+
+
+//#pragma mark  屏蔽NSLog(如果想屏蔽，并且)
+////不屏蔽注释掉 屏蔽不注释掉
+//
+//#define NSLog(...) {};
+
+
+
+#pragma mark ---- 版本信息 -----
+#define AppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define IOSSystem [[[UIDevice currentDevice] systemVersion] floatValue]
+
+
+
+#pragma mark ************ 程序的沙盒目录 ****************
+#define HomeDirectoryDocumentFilePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)/*这是获取沙盒目录*/ objectAtIndex:0]
+#define HomeDirectoryDocumentLastObjectFilePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)/*这是获取沙盒目录*/ lastObject]
+
+
+typedef NS_ENUM(NSUInteger, MeCellLineType)
+{
+    /**
+     分割线居左
+     */
+    LineAlignmentLeft   = 1,
+    
+    
+    /**
+     分割线居右
+     */
+    LineAlignmentRight  = 2,
+    
+    
+    /**
+     分割线居中
+     */
+    LineAlignmentCenter = 3,
+    
+    
+    /**
+     分割线和单元格一样宽
+     */
+    LineAlignmentFullScreen = 4,
+};
+
+
+typedef NS_ENUM(NSUInteger, AccessoryType)
+{
+    /**
+     没有箭头
+     */
+    AccessoryNone  = 1,
+    
+    
+    /**
+     有箭头
+     */
+    AccessoryDisclosureIndicator = 2,
+};
+
+
+
+typedef NS_ENUM(NSUInteger, MeCellType)
+{
+    /**
+     正常类型单元格 （高度为50，图标大小为30x30）
+     */
+    MeNormal  = 1,
+    
+    
+    /**
+     正常类型，是间隔类型单元格
+     */
+    MeNormalEmpty = 2,
+    
+    /**
+     不是普通类型
+     */
+    MeNoNormal = 3,
+};
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
